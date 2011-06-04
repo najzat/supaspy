@@ -1,0 +1,38 @@
+    body {
+      text-align:center;
+    }
+
+    #wrapper {
+      margin:0 auto;
+      width:800px;
+      text-align:left;
+    }
+
+    input {
+      line-height:150%;
+      border:1px solid #999;
+      width:200px;
+      margin:5px 0;
+    }
+
+    #urls ul input {width:500px;}
+
+    ul,li {
+      list-style-type:none;
+      margin:0;
+      padding:0;
+    }
+
+    #ready {
+      font-size:200%;
+      letter-spacing:2px;
+    }
+
+    #ready .que {display:inline;} 
+    #ready .yes {display:none;} 
+    #ready:hover .que {display:none;} 
+    #ready:hover .yes {display:inline;} 
+
+#spyset {
+  margin:20px 0;
+}
