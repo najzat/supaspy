@@ -1,8 +1,11 @@
 require 'sinatra'
 require 'erb'
 require 'dm_models.rb'
+require 'google_url_shortener'
+Google::UrlShortener::Base.api_key = 'AIzaSyBYJ9FexCl15yW0Js-mB52NGfX5ixlLuAk'
 
-def spy_link(combined_keys)
+
+def supaspy_link(combined_keys)
   "http://#{request.host}#{request.port ? ":#{request.port}" : "" }/play/#{combined_keys}"
 end
 
@@ -15,14 +18,17 @@ post '/create' do
 
   urlset = Urlset.new({
     :mail => params[:mail],
-    :urls => params[:url]
+    :urls => params[:urls]
   })
 
   urlset.save
-
   #urlset.send
 
-  spy_link( urlset.combined_keys )
+  @supaspy_link       = supaspy_link( urlset.combined_keys )
+  @supaspy_link_short = 'http://goo.gl/Fak3'
+  #@supaspy_link_short = Google::UrlShortener.shorten!(@supaspy_link)
+
+  erb :created, :layout => false
 
 end
 

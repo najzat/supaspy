@@ -1,17 +1,13 @@
-			<form id="urls" method="POST" action="/create">
-				<ul>
-					<li>
-						<input type="text" name="url[]" value="http://"/>
-					</li>
-				</ul>
-				<input type="text" name="mail" />
-				<br />
-				
-				<a href="#" id="ready">
-					ready
-					<span class="que">?</span>
-					<span class="yes">!</span>
-				</a>
-			</form>
 
-      <div id="spyset"></div>
+<form method="POST" action="/create">
+  <p class="url">
+    <input type="text" name="urls[]" value="http://" class="url" maxlength="120"/>
+  </p>
+  <small class="hint">
+    hit Enter for new url, remove with Backspace
+  </small>
+  <p>
+    <input type="text" name="mail" value="mail" class="mail"/>
+  </p>
+</form>
+
