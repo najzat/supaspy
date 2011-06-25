@@ -89,6 +89,7 @@ body {
       width:500px; 
       font-size:150%;
       color: #00A0C6;
+      border-style:dotted;
     }
 
   .button {
