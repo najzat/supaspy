@@ -1,12 +1,9 @@
-require 'sinatra'
 require 'erb'
 require 'dm_models.rb'
-require 'google_url_shortener'
-Google::UrlShortener::Base.api_key = 'AIzaSyBYJ9FexCl15yW0Js-mB52NGfX5ixlLuAk'
 
 
 def supaspy_link(combined_keys)
-  "http://#{request.host}#{request.port ? ":#{request.port}" : "" }/play/#{combined_keys}"
+  "http://#{request.host}#{request.port != 80 ? ":#{request.port}" : "" }/play/#{combined_keys}"
 end
 
 
