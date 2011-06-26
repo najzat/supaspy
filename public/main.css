@@ -115,6 +115,11 @@ body {
 
   /*results*/
 
-#results a { color:#ddd; }
+#results a { 
+  display:block;
+  margin:10px 0;
+  font-size:120%;
+  color:#ccc; 
+}
 #results a:visited { color:#00A0C6; }
 
