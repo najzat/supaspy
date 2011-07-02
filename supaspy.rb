@@ -2,7 +2,6 @@ require 'erb'
 require 'dm_models.rb'
 require 'sass'
 
-
 def supaspy_link(combined_keys)
   "http://#{request.host}#{request.port != 80 ? ":#{request.port}" : "" }/play/#{combined_keys}"
 end
