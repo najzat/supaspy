@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/content_for'
 
 require 'dm_models.rb'
 require 'erb'
@@ -39,7 +40,7 @@ get '/play/:combined_keys' do
   if Urlset.find_by_combined_keys(params[:combined_keys]).nil?
     'key not found'
   end
-  erb :play, :layout => false
+  erb :play
 end
 
 get '/spy/:combined_keys' do
