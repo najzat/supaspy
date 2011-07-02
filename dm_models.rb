@@ -2,9 +2,9 @@ require 'data_mapper'
 require 'json'
 require 'ruby-debug'
 require 'dm-timestamps'
-require 'mail'
+require 'pony'
 
-load 'db.conf'
+load 'vif'
 
 DataMapper.setup(:default, DB_CONNECTION)
 
@@ -49,14 +49,14 @@ class Check
 
   def send_mail
     
-    mail = Mail.new do
-      from    's@supaw.eu'
-      to      'wrampix@gmail.com'
-      subject 'kope lat dziadu'
-      body    'speprzaj'
-    end
-
-    mail.deliver!
+    Pony.mail(
+      :to       => 'wrampix@gmail.com', 
+      :subject  => 'supaspy report',
+      :body     => 'elopeq bitchusie',
+      :from     => 'supaspy@supaw.eu',
+      :via => :smtp, 
+      :via_options => PONY_OPTIONS
+    )
             
   end
 end

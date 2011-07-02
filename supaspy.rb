@@ -1,5 +1,6 @@
 require 'erb'
 require 'dm_models.rb'
+require 'sass'
 
 
 def supaspy_link(combined_keys)
@@ -46,7 +47,7 @@ post '/spy/:combined_keys' do
     if urlset.checks.count < 5
       check = urlset.checks.new({ :visited => params[:visited] })
       check.save
-      #check.send_mail
+      check.send_mail
     end
   end
 end
