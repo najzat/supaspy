@@ -51,3 +51,7 @@ post '/spy/:combined_keys' do
   end
 end
 
+get '/stylesheet.css' do
+  scss :stylesheet
+end
+

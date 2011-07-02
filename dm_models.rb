@@ -4,7 +4,9 @@ require 'ruby-debug'
 require 'dm-timestamps'
 require 'mail'
 
-DataMapper.setup(:default, 'mysql://localhost/supaspy_dev')
+load 'db.conf'
+
+DataMapper.setup(:default, DB_CONNECTION)
 
 class Urlset
   include DataMapper::Resource
@@ -48,7 +50,7 @@ class Check
   def send_mail
     
     mail = Mail.new do
-      from    'wrampix@gmail.com'
+      from    's@supaw.eu'
       to      'wrampix@gmail.com'
       subject 'kope lat dziadu'
       body    'speprzaj'

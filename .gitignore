@@ -3,3 +3,5 @@ tmp/*
 config/*
 *~
 .*.sw*
+db.conf
+config.ru

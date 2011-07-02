@@ -29,7 +29,8 @@ urls.events = {
 urls.submit = function() {
 	urls.form.set('send', {
 		onSuccess: function(_res) {
-			$('content-1').getParent('div.content-floor').removeClass('content-floor-active');
+			$('content-1').set('html','<p><a href="/" class="button">Once again?</a></p>')
+        .getParent('div.content-floor').removeClass('content-floor-active');
 			$('content-2').set('html', _res).getParent('div.content-floor').addClass('content-floor-active');
 		}
 	});
