@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'erb'
 require 'dm_models.rb'
+require 'sass'
 require 'google_url_shortener'
 Google::UrlShortener::Base.api_key = 'AIzaSyBYJ9FexCl15yW0Js-mB52NGfX5ixlLuAk'
 
@@ -52,5 +53,9 @@ post '/spy/:combined_keys' do
       #check.send_mail
     end
   end
+end
+
+get '/stylesheet.css' do
+  scss :stylesheet
 end
 

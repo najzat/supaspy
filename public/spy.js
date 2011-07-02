@@ -27,15 +27,15 @@
 			})
 
       $('spy').empty().adopt(linksToShow);
+      window.parent.document.getElementById('results').innerHTML = $('spy').innerHTML;
 
 			new Request({
 				'url' : '/spy/'+document.title,
 				'method' : 'post',
 				'data' : 'visited=' + linksToSave.join(','),
-				'onSuccess' : function() { 
+				'onSuccess' : function(_response) { 
           //alert(linksHtml);
           //window.parent.$('results').grab(linksToShow);
-          window.parent.document.getElementById('results').innerHTML = $('spy').innerHTML;
 
           window.parent.$$('iframe')[0].dispose(); 
         }

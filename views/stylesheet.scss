@@ -1,7 +1,40 @@
+
+$clr_text: #999;
+$clr_text_active: #666;
+
+$clr_bg: #ddd;
+
+$clr_power: #00A0C6;
+
+/* http://www.colourlovers.com/palette/90734/Newly_Risen_Moon */
+
+$clr_text: #696758;
+$clr_text_active: #36393B;
+
+$clr_bg: #C5BC8E;
+$clr_body_bg: #fff;;
+
+$clr_power: #00A0C6;
+
+/* http://www.bucchake.com/2012/ */
+
+$clr_body_bg:#fff;
+$clr_bg:#DCDCDC;
+
+$clr_power:#4C93B5;
+
+$clr_text:#8B8B8B;
+$clr_text_active:#606060;
+
+$clr_power_green:#5DA326;
+
+
+
 body {
     font-size:small;
     font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
     font-family:monospace,helvetica, arial, sans-serif;
+    background:$clr_body_bg;
 }
   * html body { font-size:x-small; }
 
@@ -12,7 +45,7 @@ body {
     }
 
     p { line-height:120%; }
-    a { text-decoration:none; }
+    a { text-decoration:none;color:$clr_text_active; }
     strong { font-weight:bold;}
     small { font-size:80%; }
 
@@ -20,15 +53,15 @@ body {
       width:900px;
       margin:0 auto;
       text-align:left;
-      /*background:url(/grey2.gif) left repeat-y;*/
+      background:url(/grey2.gif) left repeat-y;
     }
 
     .content-floor {
       clear:both;
       position:relative;
-      color:#999;
+      color:$clr_text;
     }
-      .content-floor-active { color:#666; }
+      .content-floor-active { color:$clr_text_active; }
 
       .content-door {
         padding-top:20px;
@@ -36,14 +69,14 @@ body {
         width:100px;
         text-align:right;
         font-size:500%;
-        color:#ddd;
+        color:$clr_bg;
         text-align:right;
         }
-        .content-door a { color:#bbb; }
+        .content-door a { color:$clr_bg; }
 
         .content-door a:hover,
         .content-floor:hover .content-door,
-        .content-floor-active .content-door { color:#00A0C6; }
+        .content-floor-active .content-door { color:$clr_power; }
 
 
       .content-anteroom {
@@ -51,11 +84,11 @@ body {
         float:left;
         width:200px;
         font-size:80%;
-        color:#999;
-        background:#ddd;
+        color:$clr_text;
+        /*background:$clr_bg;*/
       }
         .content-floor:hover .content-anteroom,
-        .content-floor-active .content-anteroom { color:#555; }
+        .content-floor-active .content-anteroom { color:$clr_text_active; }
 
         h1 {
           margin: 10px 0 0 5px;
@@ -70,43 +103,43 @@ body {
         float:left;
         padding-left:20px ;
         width:550px;
-        border:1px dashed #fff;
         border-width:2px 0;
       }
         .content-sitting-room p { margin: 6px 0 0 0 ; }
         /*.content-floor:hover .content-sitting-room,*/
         /*.content-floor-active .content-sitting-room { border-color:#ddd; }*/
 
-
 /*forms*/
 
   input {
-    border:2px solid #ddd;
+    border:2px solid $clr_bg;
     width:250px;
-    padding:2px;
+    padding:4px;
     margin:2px 0;
+    background:$clr_body_bg;
+    color:$clr_text;
   }
-    input:focus {border-color:#00A0C6;}
+    input:focus {border-color:$clr_power;}
 
     .url input { width:500px; }
     .supaspy_link { 
       width:500px; 
       font-size:150%;
-      color: #00A0C6;
+      color: $clr_power;
       border-style:dotted;
     }
 
   .button {
-    background-color: #ddd;
+    background-color: $clr_bg;
     border: 0 none;
-    color: #666;
+    color: $clr_text_active;
     cursor: pointer;
     padding: 3px 5px;
     vertical-align: middle;
     /*text-decoration:none;*/
   }
     .button:hover {
-      background-color:#00A0C6;
+      background-color:$clr_power;
       color:#eee;
     }
 
@@ -114,7 +147,7 @@ body {
     .button:hover .excl, .ques {display:inline;}
 
 
-  .hint { color:#999; }
+  .hint { }
 
   /*results*/
 
@@ -122,7 +155,12 @@ body {
   display:block;
   margin:10px 0;
   font-size:120%;
-  color:#ccc; 
+  color:$clr_text; 
+  text-decoration: line-through;
+
 }
-#results a:visited { color:#00A0C6; }
+#results a:visited { 
+  color:$clr_power_green; 
+  text-decoration:none;
+}
 
