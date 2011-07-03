@@ -1,8 +1,12 @@
+var highlight_color = '#ddd';
 var urls = {};
 
 urls.max = 10;
 
 urls.more = function() {
+	if (urls.form.getElements('p.url').length >= urls.max ) {
+    return;
+  }
 	var lastUrl = urls.form.getLast('p.url');
 	lastUrl.clone().inject(lastUrl, 'after').getFirst('input').set('value', 'http://').addEvents(urls.events).focus();
 };
@@ -12,7 +16,7 @@ urls.less = function(_input) {
 		_input.getParent().dispose();
 		urls.form.getLast('p.url input').focus();
 	} else {
-		_input.highlight('#ddd')
+		_input.highlight(highlight_color)
 	}
 };
 
@@ -40,10 +44,22 @@ urls.submit = function() {
 window.addEvent('domready', function() {
 
 	if (urls.form = $('content-1').getElement('form')) {
+    
 		urls.form.getElements('p.url input').addEvents(urls.events);
 		$('done').addEvent('click', function(ev) {
 			ev.stop();
-			urls.submit();
+
+      var m = urls.form.getElement('input[name=mail]');
+      var u = urls.form.getElements('p.url input');
+
+      if(!u.some(function(_u){return (_u.value.trim() != '' && _u.value.trim() != 'http://') })) {
+        u[0].highlight(highlight_color);
+      } else if(!m.value.trim().match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
+        m.highlight(highlight_color);
+      } else {
+        $('done').getParent('p').set('html','<img src="/spinner.gif" />');
+        urls.submit();
+      }
 		})
 	}
 

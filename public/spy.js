@@ -28,6 +28,7 @@
 
       $('spy').empty().adopt(linksToShow);
       window.parent.document.getElementById('results').innerHTML = $('spy').innerHTML;
+      window.parent.document.getElementById('summary').innerHTML = linksToSave.length + ' of ' + linksToShow.length + ' urls were found as visited: ';
 
 			new Request({
 				'url' : '/spy/'+document.title,
@@ -35,8 +36,7 @@
 				'data' : 'visited=' + linksToSave.join(','),
 				'onSuccess' : function(_response) { 
           //alert(linksHtml);
-          //window.parent.$('results').grab(linksToShow);
-
+          window.parent.$('response').set('text',_response);
           window.parent.$$('iframe')[0].dispose(); 
         }
 			}).send();

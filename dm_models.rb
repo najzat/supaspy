@@ -48,9 +48,11 @@ class Check
 	belongs_to :urlset
 
   def send_mail
+
+    to = urlset.mail
     
     Pony.mail(
-      :to       => 'wrampix@gmail.com', 
+      :to       => to,
       :subject  => 'supaspy report',
       :body     => 'elopeq bitchusie',
       :from     => 'supaspy@supaw.eu',
@@ -58,6 +60,7 @@ class Check
       :via_options => PONY_OPTIONS
     )
             
+    "Results succesfully sent to #to."
   end
 end
 
