@@ -34,6 +34,9 @@ body {
     font-size:small;
     font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
     font-family:monospace,helvetica, arial, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    font-family:'Menlo', 'Courier New', 'Terminal', monospace;
+    //font-family:"Reader Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
     background:$clr_body_bg;
 }
   * html body { font-size:x-small; }
@@ -44,7 +47,7 @@ body {
       padding:0;
     }
 
-    p { line-height:120%; }
+    p { line-height:150%; }
     a { text-decoration:none;color:$clr_text_active; }
     strong { font-weight:bold;}
     small { font-size:80%; }
